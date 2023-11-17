@@ -1,0 +1,7 @@
+
+Acsharpsquid:S2933"$Make 'bookingRepository' 'readonly'.(°œË¿
+Bcsharpsquid:S2933"%Make 'customerRepository' 'readonly'.(Õ¤¥ğ
+>csharpsquid:S2933"!Make 'roomRepository' 'readonly'.(ö¦Ğ
+>csharpsquid:S2933"!Make 'bookingManager' 'readonly'.(±ÍÏ
+ycsharpsquid:S4487"\Remove this unread private field 'customerRepository' or refactor the code to use its value.(Õ¤¥ğ
+ucsharpsquid:S4487"XRemove this unread private field 'roomRepository' or refactor the code to use its value.(ö¦Ğ

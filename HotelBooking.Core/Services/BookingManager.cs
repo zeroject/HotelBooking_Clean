@@ -33,7 +33,7 @@ namespace HotelBooking.Core
             }
         }
 
-        public int FindAvailableRoom(DateTime startDate, DateTime endDate)
+        public int FindAvai<lableRoom(DateTime startDate, DateTime endDate)
         {
             if (startDate <= DateTime.Today || startDate > endDate)
                 throw new ArgumentException("The start date cannot be in the past or later than the end date.");
