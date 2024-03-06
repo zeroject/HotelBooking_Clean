@@ -52,16 +52,17 @@ namespace HotelBooking.UnitTests
 
             // Arrange
             DateTime date = DateTime.Today.AddDays(1);
+            
             // Act
             int roomId = bookingManager.FindAvailableRoom(date, date);
 
-            // Assert
             var bookingForReturnedRoomId = bookingRepository.GetAll().Where(
                 b => b.RoomId == roomId
                 && b.StartDate <= date
                 && b.EndDate >= date
                 && b.IsActive);
-
+            
+            // Assert
             Assert.Empty(bookingForReturnedRoomId);
         }
 

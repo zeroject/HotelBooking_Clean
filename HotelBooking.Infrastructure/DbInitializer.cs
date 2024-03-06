@@ -16,7 +16,7 @@ namespace HotelBooking.Infrastructure
             context.Database.EnsureDeleted();
 
             // Create the database, if it does not already exists. This operation
-            // is necessary, if you dont't use the in-memory database.
+            // is necessary, if you don't use the in-memory database.
             context.Database.EnsureCreated();
 
             // Look for any bookings.

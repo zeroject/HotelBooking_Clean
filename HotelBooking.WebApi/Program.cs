@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddDbContext<HotelBookingContext>(opt => opt.UseInMemoryDatabase("HotelBookingDb"));
+builder.Services.AddDbContext<HotelBookingContext>(opt => 
+    opt.UseSqlite("Data Source=HotelBookingDb.db"));
 
 builder.Services.AddScoped<IRepository<Room>, RoomRepository>();
 builder.Services.AddScoped<IRepository<Customer>, CustomerRepository>();

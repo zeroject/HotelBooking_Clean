@@ -6,7 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<HotelBookingContext>(opt => opt.UseInMemoryDatabase("HotelBookingDb"));
+builder.Services.AddDbContext<HotelBookingContext>(opt => 
+    opt.UseSqlite("Data Source=HotelBookingDb.db"));
 
 builder.Services.AddScoped<IRepository<Room>, RoomRepository>();
 builder.Services.AddScoped<IRepository<Customer>, CustomerRepository>();
