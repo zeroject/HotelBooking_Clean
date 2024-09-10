@@ -128,5 +128,19 @@ namespace HotelBooking.UnitTests
             // Assert
             Assert.Equal(expected, result.Count); // Assert that the number of fully occupied days matches the expected value
         }
+
+        [Fact]
+        public void GetFullyOccupiedDates_ThrowsError()
+        {
+            // Arrange
+            DateTime startDate = DateTime.Today.AddDays(2);
+            DateTime endDate = DateTime.Today.AddDays(1);
+
+            // Act
+            Action act = () => bookingManager.GetFullyOccupiedDates(startDate, endDate);
+
+            // Assert
+            Assert.Throws<ArgumentException>(act);
+        }
     }
 }
