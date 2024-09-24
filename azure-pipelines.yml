@@ -30,16 +30,14 @@ steps:
     command: test
     projects: '**/*Tests/*.csproj'
 
-#Get Nohop
-- script: sudo apt-get update && sudo apt-get install coreutils -y
-  displayName: 'Install nohup'
-
-# Run the Web API in the background
-- task: CmdLine@2
-  displayName: Run the WebApi
+# Run the web api in background with Powershell
+- task: PowerShell@2
+  displayName: Run the Web API (Windows)
+  condition: eq(variables['Agent.OS'], 'Windows_NT')
   inputs:
+    targetType: 'inline'
     script: |
-      nohop dotnet $(Build.SourcesDirectory)/HotelBooking.WebApi/bin/$(buildConfiguration)/HotelBooking.WebApi.dll &
+      Start-Process -NoNewWindow dotnet -ArgumentList "$(Build.SourcesDirectory)\HotelBooking.WebApi\bin\$(buildConfiguration)\netcoreapp3.1\HotelBooking.WebApi.dll"
 
 # Install Newman
 - task: Npm@1
