@@ -33,7 +33,7 @@ steps:
 - task: CmdLine@2
   displayName: Run the WebApi
   inputs:
-    script: 'dotnet $(Build.SourcesDirectory)/HotelBooking.WebApi/bin/$(buildConfiguration)/HotelBooking.WebApi.dll &'
+    script: 'dotnet $(Build.SourcesDirectory)\HotelBooking.WebApi\bin<$(buildConfiguration)\HotelBooking.WebApi.exe &'
 
 # Install Newman
 - task: Npm@1
