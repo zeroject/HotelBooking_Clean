@@ -38,7 +38,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      Start-Process -NoNewWindow dotnet -ArgumentList "$(Build.SourcesDirectory)\HotelBooking.WebApi\bin\$(buildConfiguration)\netcoreapp3.1\HotelBooking.WebApi.dll"
+      Start-Process -NoNewWindow dotnet -ArgumentList "$(Build.SourcesDirectory)\HotelBooking.WebApi\bin\$(buildConfiguration)\HotelBooking.WebApi.dll"
 
 # Wait for the Web API to be ready
 - task: PowerShell@2
