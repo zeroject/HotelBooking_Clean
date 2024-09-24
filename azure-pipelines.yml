@@ -20,6 +20,7 @@ steps:
   displayName: Build
   inputs:
     command: build
+    arguments: '--configuration $(buildConfiguration)'
     projects: '**/*.csproj'
 
 # Test
@@ -33,7 +34,7 @@ steps:
 - task: CmdLine@2
   displayName: Run the WebApi
   inputs:
-    script: 'dotnet $(Build.SourcesDirectory)/HotelBooking.WebApi/bin/$(buildConfiguration)/netcoreapp3.1/HotelBooking.WebApi.dll &'
+    script: 'dotnet $(Build.SourcesDirectory)/HotelBooking.WebApi/bin/$(buildConfiguration)/HotelBooking.WebApi.dll &'
 
 # Install Newman
 - task: Npm@1
