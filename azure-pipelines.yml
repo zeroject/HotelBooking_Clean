@@ -34,7 +34,8 @@ steps:
 - task: CmdLine@2
   displayName: Run the WebApi
   inputs:
-    script: 'nohop dotnet $(Build.SourcesDirectory)/HotelBooking.WebApi/bin/$(buildConfiguration)/HotelBooking.WebApi.dll &'
+    script: |
+      nohop dotnet $(Build.SourcesDirectory)/HotelBooking.WebApi/bin/$(buildConfiguration)/HotelBooking.WebApi.dll &
 
 # Install Newman
 - task: Npm@1
