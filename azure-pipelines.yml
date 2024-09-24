@@ -30,6 +30,10 @@ steps:
     command: test
     projects: '**/*Tests/*.csproj'
 
+#Get Nohop
+- script: sudo apt-get update && sudo apt-get install coreutils -y
+  displayName: 'Install nohup'
+
 # Run the Web API in the background
 - task: CmdLine@2
   displayName: Run the WebApi
