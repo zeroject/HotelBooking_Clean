@@ -116,10 +116,10 @@ namespace HotelBooking.Specs.Features
     await testRunner.AndAsync("the second room is 102", ((string)(null)), ((Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 6
-    await testRunner.WhenAsync("I create a booking with \"08-10-2024,22-10-2024\"", ((string)(null)), ((Reqnroll.Table)(null)), "When ");
+    await testRunner.WhenAsync("I create a booking with \"2024-10-23,2024-11-23\"", ((string)(null)), ((Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 7
-    await testRunner.ThenAsync("booking is created with \"08-12-2024,22-10-2024\" the result is true", ((string)(null)), ((Reqnroll.Table)(null)), "Then ");
+    await testRunner.ThenAsync("booking is created with 2024-11-24,2024-11-30 the result is true", ((string)(null)), ((Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -150,10 +150,10 @@ namespace HotelBooking.Specs.Features
     await testRunner.AndAsync("the second room is 102", ((string)(null)), ((Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 12
-    await testRunner.WhenAsync("I create a booking with \"08-10-2024,22-10-2024\"", ((string)(null)), ((Reqnroll.Table)(null)), "When ");
+    await testRunner.WhenAsync("I create a booking with \"2024-10-24,2024-10-30\"", ((string)(null)), ((Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 13
-    await testRunner.ThenAsync("booking is created with \"08-10-2024,22-10-2024\" the result is false", ((string)(null)), ((Reqnroll.Table)(null)), "Then ");
+    await testRunner.ThenAsync("booking is created with 2024-11-10,2024-11-24 the result is false", ((string)(null)), ((Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

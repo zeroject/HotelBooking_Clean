@@ -1,4 +1,5 @@
 ﻿using HotelBooking.Core;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,16 @@ namespace HotelBooking.Specs.StepDefinitions
     [Binding]
     public class CreatBookingStepDefinition
     {
-        private readonly IRepository<Booking> bookingRepository;
-        private readonly IRepository<Room> roomRepository;
+        private readonly Mock<IRepository<Booking>> mockBookingRepository;
+        private readonly Mock<IRepository<Room>> mockRoomRepository;
 
         BookingManager bookingManager;
 
-        public CreatBookingStepDefinition(IRepository<Booking> bookingRepository, IRepository<Room> roomRepository)
+        public CreatBookingStepDefinition()
         {
-            this.bookingRepository = bookingRepository;
-            this.roomRepository = roomRepository;
-            bookingManager = new BookingManager(bookingRepository, roomRepository);
+            mockBookingRepository = new Mock<IRepository<Booking>>();
+            mockRoomRepository = new Mock<IRepository<Room>>();
+            bookingManager = new BookingManager(mockBookingRepository.Object, mockRoomRepository.Object);
         }
 
         [StepArgumentTransformation]
@@ -38,7 +39,6 @@ namespace HotelBooking.Specs.StepDefinitions
         {
             Room room = new Room();
             room.Id = id;
-            roomRepository.Add(room);
         }
 
         [Given("the second room is {int}")]
@@ -46,7 +46,15 @@ namespace HotelBooking.Specs.StepDefinitions
         {
             Room room = new Room();
             room.Id = id;
-            roomRepository.Add(room);
+        }
+
+        [When("I create a booking with {string}")]
+
+        public void WhenIcreateAbookingWith(string dates)
+        {
+            Booking booking = new Booking();
+            booking.StartDate = DateTime.Parse(dates.Split(',')[0]);
+            booking.EndDate = DateTime.Parse(dates.Split(',')[1]);
         }
 
         [Then("booking is created with (.*) the result is (.*)")]
