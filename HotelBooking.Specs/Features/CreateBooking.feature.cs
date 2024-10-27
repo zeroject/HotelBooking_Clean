@@ -147,13 +147,106 @@ namespace HotelBooking.Specs.Features
     await testRunner.GivenAsync("the first room is 101", ((string)(null)), ((Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 11
-    await testRunner.AndAsync("the second room is 102", ((string)(null)), ((Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 12
     await testRunner.WhenAsync("I create a booking with \"2024-10-24,2024-10-30\"", ((string)(null)), ((Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 12
     await testRunner.ThenAsync("booking is created with 2024-11-10,2024-11-24 the result is false", ((string)(null)), ((Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Attempt to create a booking yesterday")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Hotel Booking")]
+        public async System.Threading.Tasks.Task AttemptToCreateABookingYesterday()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            Reqnroll.ScenarioInfo scenarioInfo = new Reqnroll.ScenarioInfo("Attempt to create a booking yesterday", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 14
+  this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 15
+    await testRunner.GivenAsync("the first room is 101", ((string)(null)), ((Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 16
+    await testRunner.AndAsync("the second room is 102", ((string)(null)), ((Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 17
+    await testRunner.ThenAsync("booking is created with 2023-11-10,2023-11-24 the error is \"The start date cannot" +
+                        " be in the past or later than the end date.\"", ((string)(null)), ((Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Attempt to create a booking on the same date")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Hotel Booking")]
+        public async System.Threading.Tasks.Task AttemptToCreateABookingOnTheSameDate()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            Reqnroll.ScenarioInfo scenarioInfo = new Reqnroll.ScenarioInfo("Attempt to create a booking on the same date", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 19
+  this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 20
+    await testRunner.GivenAsync("the first room is 101", ((string)(null)), ((Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 21
+    await testRunner.AndAsync("the second room is 102", ((string)(null)), ((Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 22
+    await testRunner.ThenAsync("booking is created with 2024-11-10,2024-11-10 the error is \"The start date cannot" +
+                        " be in the past or later than the end date.\"", ((string)(null)), ((Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Attempt to create a booking when the end date is earlier than the start date")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Hotel Booking")]
+        public async System.Threading.Tasks.Task AttemptToCreateABookingWhenTheEndDateIsEarlierThanTheStartDate()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            Reqnroll.ScenarioInfo scenarioInfo = new Reqnroll.ScenarioInfo("Attempt to create a booking when the end date is earlier than the start date", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 24
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 25
+    await testRunner.GivenAsync("the first room is 101", ((string)(null)), ((Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 26
+    await testRunner.AndAsync("the second room is 102", ((string)(null)), ((Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 27
+    await testRunner.ThenAsync("booking is created with 2024-11-11,2024-11-10 the error is \"The start date cannot" +
+                        " be in the past or later than the end date.\"", ((string)(null)), ((Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

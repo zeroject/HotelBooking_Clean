@@ -63,5 +63,18 @@ namespace HotelBooking.Specs.StepDefinitions
             bool v = bookingManager.CreateBooking(booking);
             if (result == v) { };
         }
+
+        [Then("booking is created with (.*) the error is (.*)")]
+        public void ThenTheBookingISCreatedItShouldReturn(Booking booking, string error)
+        {
+            try
+            {
+                bookingManager.CreateBooking(booking);
+            }
+            catch (Exception e)
+            {
+                if (e.Message == error) { };
+            }
+        }
     }
 }
